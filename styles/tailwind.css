@@ -1,12 +1,76 @@
+/* Font family Source Serif Pro, Bebas Neue and  Poppins from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&family=Source+Serif+Pro:wght@700;900&display=swap");
 @import "tailwindcss";
 
+@theme {
+    --font-sans: 'Poppins', sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-bebas-neue: 'Bebas Neue', sans-serif;
+    --font-source-serif-pro: 'Source Serif Pro', serif;
+    --color-primary: #5C7962;
+    --color-secondary: #5C553A;
+    --color-grey: #707070;
+}
 @layer base {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-source-serif-pro;
+    }
     h2 {
-        font-family: 'Source Serif Pro', serif;
-        font-weight: 900;
-        font-style: normal;
-        font-size: 40px;
-        line-height: 1.2;
-        letter-spacing: -0.01em;
+        @apply text-[28px] font-bold leading-[1.26em] tracking-[-0.01em] not-italic; /* mobile default */
+
+        @apply md:text-[40px] md:font-black md:leading-[1.2em]; /* desktop overrides */
+    }
+
+    button {
+        @apply inline-block font-semibold p-4 leading-[1.4] tracking-[0.03em] rounded-[100px];
+    }
+}
+
+@utility badge {
+    @apply font-bebas-neue px-2 py-1 rounded-[100px] border border-black top-1 text-[8px]/[1] tracking-[0.04em]; /* mobile default */
+
+    @apply md:top-2 md:text-[10px]/[1] tracking-[0.06em]; /* desktop overrides */
+}
+@layer components {
+    .button--primary {
+        @apply bg-black text-white;
+    }
+
+    .shop-all-link {
+        @apply font-semibold text-[14px]/[1.4] tracking-[0.03em] text-secondary;
+    }
+
+    .badge-light {
+        @apply badge left-1  text-black bg-white; /* mobile default */
+        @apply md:left-2;/* desktop overrides */
+    }
+
+    .badge-dark {
+        @apply badge right-1 text-white bg-primary; /* mobile default */
+        @apply md:right-2;/* desktop overrides */
+    }
+
+    .product-card {
+        @apply w-[50%]; /* mobile default */
+        @apply md:min-w-[355px] w-auto; /* desktop overrides */
+    }
+
+    .product-card-title {
+        @apply font-bebas-neue font-normal text-[16px]/[1] tracking-[0.03em] mb-2; /* mobile default */
+        @apply md:text-[18px]/[1]; /* desktop overrides */
+    }
+
+    .reviews {
+        @apply text-grey font-normal text-[11px]/[1] tracking-[0]; /* mobile default */
+        @apply md:text-[12px]/[1]; /* desktop overrides */
+    }
+
+    .price {
+        @apply font-medium text-[16px]/[1] tracking-[0];
     }
 }
