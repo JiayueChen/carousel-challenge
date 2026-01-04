@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Font family Source Serif Pro, Bebas Neue and  Poppins from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&family=Source+Serif+Pro:wght@700;900&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./styles/tailwind.css">
+    <script src="./assets/js/tailwind.js"></script>
+    <script src="./assets/js/main.js" defer></script>
+</head>
+
+<body>
+    <section>
+        <header class="flex justify-between items-center">
+            <h2 class="section-title">
+                Best Sellers
+            </h2>
+            <!-- desktop only -->
+            <a href="#" class="hidden md:flex items-center">
+                Shop All Best Sellers
+                <svg class="icon icon-arrow-riht inline-block w-5 h-5" aria-hidden="true">
+                    <use href="/assets/icons/arrow-right.svg" />
+                </svg>
+                <span class="sr-only">arrow right</span>
+            </a>
+        </header>
+
+        <!-- product carousel -->
+        <ul class="flex scrollbar" role="list">
+            <!-- product card -->
+            <li class="product-card">
+                <article>
+                    <!-- product image -->
+                    <div class="relative">
+                        <img src="./assets/images/image1.jpg" alt="Product name" class="product-image" />
+                        <!-- badge -->
+                        <span class="absolute top-2 left-2" aria-label="New product">New</span>
+                    </div>
+
+                    <!-- product name -->
+                    <h3 class="mt-3">
+                        Outside Vibes T-Shirt Sunshine
+                    </h3>
+
+                    <div class="flex justify-start items-center">
+                        <svg class="icon icon-star inline-block w-3 h-3" aria-hidden="true">
+                            <use href="/assets/icons/star.svg" />
+                        </svg>
+                        <svg class="icon icon-star inline-block w-3 h-3" aria-hidden="true">
+                            <use href="/assets/icons/star.svg" />
+                        </svg>
+                        <svg class="icon icon-star inline-block w-3 h-3" aria-hidden="true">
+                            <use href="/assets/icons/star.svg" />
+                        </svg>
+                        <svg class="icon icon-star inline-block w-3 h-3" aria-hidden="true">
+                            <use href="/assets/icons/star.svg" />
+                        </svg>
+                        <svg class="icon icon-star inline-block w-3 h-3" aria-hidden="true">
+                            <use href="/assets/icons/empty-star.svg" />
+                        </svg>
+                        <span class="sr-only">Rating 4.3 out of 5 stars</span>
+                        <span>(1,234 Reviews)</span>
+                    </div>
+
+                    <p class="price">$104.95</p>
+                </article>
+            </li>
+        </ul>
+
+        <!-- Mobile only -->
+        <button id="showMoreBtn" class="md:hidden mt-6 w-full border py-3">
+            Show More
+        </button>
+    </section>
+</body>
+
+</html>
