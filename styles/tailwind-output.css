@@ -261,11 +261,8 @@
   .justify-start {
     justify-content: flex-start;
   }
-  .gap-6 {
-    gap: calc(var(--spacing) * 6);
-  }
-  .overflow-x-visible {
-    overflow-x: visible;
+  .overflow-hidden {
+    overflow: hidden;
   }
   .rounded-\[10px\] {
     border-radius: 10px;
@@ -304,6 +301,11 @@
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
+    }
+  }
+  .md\:px-0 {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 0);
     }
   }
   .md\:px-3 {
@@ -383,6 +385,53 @@
     letter-spacing: 0.03em;
     color: var(--color-secondary);
   }
+  .product-card-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    @media (width >= 48rem) {
+      scroll-snap-type: x var(--tw-scroll-snap-strictness);
+    }
+    @media (width >= 48rem) {
+      --tw-scroll-snap-strictness: proximity;
+    }
+    @media (width >= 48rem) {
+      scroll-snap-align: end;
+    }
+    @media (width >= 48rem) {
+      flex-wrap: nowrap;
+    }
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 6);
+    }
+    @media (width >= 48rem) {
+      overflow-x: scroll;
+    }
+    @media (width >= 48rem) {
+      scroll-behavior: smooth;
+    }
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 32);
+    }
+  }
+  .scrollbar::-webkit-scrollbar {
+    cursor: pointer;
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #231F20;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background: #DDD6D7;
+    margin: 0 128px;
+  }
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    border: 0;
+  }
   .badge-light {
     top: calc(var(--spacing) * 1);
     border-radius: 100px;
@@ -442,8 +491,10 @@
     }
   }
   .product-card {
-    width: 50%;
-    width: auto;
+    width: calc(50% - 5.5px);
+    @media (width >= 48rem) {
+      width: auto;
+    }
     @media (width >= 48rem) {
       min-width: 355px;
     }
@@ -483,6 +534,19 @@
     --tw-tracking: 0;
     letter-spacing: 0;
   }
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .slide-down {
+    animation: slideDown 0.4s ease-out forwards;
+  }
 }
 @property --tw-border-style {
   syntax: "*";
@@ -501,6 +565,11 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-scroll-snap-strictness {
+  syntax: "*";
+  inherits: false;
+  initial-value: proximity;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -508,6 +577,7 @@
       --tw-tracking: initial;
       --tw-leading: initial;
       --tw-font-weight: initial;
+      --tw-scroll-snap-strictness: proximity;
     }
   }
 }
