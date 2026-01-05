@@ -46,12 +46,11 @@
     }
 
     .product-card-carousel {
-        @apply flex flex-wrap gap-[11px] ; /* mobile default */
-        @apply md:gap-6 md:flex-nowrap md:px-32 md:overflow-x-scroll md:scroll-smooth md:snap-x md:snap-proximity md:snap-end; /* desktop overrides */
+        @apply flex flex-wrap gap-[11px]; /* mobile default */
+        @apply md:gap-6 md:flex-nowrap md:px-32 md:overflow-x-scroll md:scroll-smooth md:snap-x md:snap-proximity md:snap-end md:pb-12; /* desktop overrides */
     }
     
     .scrollbar::-webkit-scrollbar {
-        cursor: pointer;
         width: 6px; /* 4px after minus 1px top & bottom border */
         height: 6px; /* 4px after minus 1px top & bottom border */
     }

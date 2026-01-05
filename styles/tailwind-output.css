@@ -413,9 +413,11 @@
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 32);
     }
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 12);
+    }
   }
   .scrollbar::-webkit-scrollbar {
-    cursor: pointer;
     width: 6px;
     height: 6px;
   }
