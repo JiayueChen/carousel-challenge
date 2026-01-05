@@ -249,9 +249,6 @@
   .w-5 {
     width: calc(var(--spacing) * 5);
   }
-  .w-100 {
-    width: calc(var(--spacing) * 100);
-  }
   .w-full {
     width: 100%;
   }
